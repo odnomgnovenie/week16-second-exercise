@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Регистрация пользователя</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form id="registrationForm" novalidate>
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" placeholder="Иван Иванов" required pattern="[A-Za-zА-Яа-яЁё\s]{2,20}">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+    
+    <label for="age">Возраст:</label>
+    <input type="number" id="age" name="age" placeholder="25" required>
+    
+    <label>Выберите пол:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Мужчина</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Женщина</label>
+    
+    <label for="profession">Профессия:</label>
+    <select id="profession" name="profession" required>
+        <option value="" disabled selected hidden>Выберите профессию</option>
+        <option value="doctor">Врач</option>
+        <option value="programmer">Программист</option>
+        <option value="teacher">Учитель</option>
+        <option value="designer">Дизайнер</option>
+        <option value="engineer">Инженер</option>
+        <option value="seller">Продавец</option>
+        <option value="other">Другое</option>
+    </select>
+    
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" placeholder="Пароль" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$">
+    
+    <label for="terms">Я согласен с обработкой данных:</label>
+    <input type="checkbox" id="terms" name="terms" required>
+    
+    <button type="submit">Отправить</button>
+</form>
+
+<div id="error-message"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
